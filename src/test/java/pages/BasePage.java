@@ -29,12 +29,21 @@ public class BasePage {
         return "https://www.klekt.com/";
     }
 
-    public static String getBaseUrl(){
+    public static String getBaseUrl() {
         String BaseUrl = returnBaseUrl();
-        if (BaseUrl != null){
-            return BaseUrl.replace("Index.html"," ");
+        if (BaseUrl != null) {
+            return BaseUrl.replace("Index.html", " ");
         }
         return BaseUrl;
+    }
+
+        public static void sleep(long ms) {
+            try {
+                Thread.sleep(ms);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
 
     }
 }
