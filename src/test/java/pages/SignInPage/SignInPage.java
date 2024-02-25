@@ -29,6 +29,9 @@ public class SignInPage extends BasePage {
     private By acceptCokies = By.id("rcc-confirm-button");
     private By emailTxt = By.xpath("//label[text()='Email']");
     private By emailField = By.xpath("//input[@placeholder='Email...']");
+    private By passField = By.xpath("//input[@type='password']");
+    private By clickLogIn2 = By.xpath("//button[text()='Log In']");
+
 
 
     public void clickAcceptCokies() {
@@ -53,8 +56,10 @@ public class SignInPage extends BasePage {
         action.moveToElement(ele).perform();
     }
 
-    public void inputEmail(String email) {
+    public void inputEmail(String email, String password) {
         driver.findElement(emailField).sendKeys(email);
+        driver.findElement(passField).sendKeys(password);
+        driver.findElement(clickLogIn2).click();
     }
 
 

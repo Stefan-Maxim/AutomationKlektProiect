@@ -16,7 +16,8 @@ public class SignInTest extends BaseTest {
     public void signIn() {
 
 
-        String email = "nimic@yahoo.com";
+        String email = "test_klekt@mail.com";
+        String password = "adidasi45)";
 
         sleep(3000);
         LOG.info("Click 'accept' cockies");
@@ -35,8 +36,8 @@ public class SignInTest extends BaseTest {
 
         sleep(3000);
 
-        LOG.info("Input 'email' field");
-        signInPage.inputEmail(email);
+        LOG.info("Input 'email and pass' field than Log");
+        signInPage.inputEmail(email, password);
 
 
     }
