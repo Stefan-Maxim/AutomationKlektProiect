@@ -17,7 +17,7 @@ public class SignInTest extends BaseTest {
 
 
         String email = "test_klekt@mail.com";
-        String password = "adidasi45)";
+        String password = "Adidasi45)";
 
         sleep(3000);
         LOG.info("Click 'accept' cockies");

@@ -15,8 +15,8 @@ public class RegisterTest extends BaseTest {
         String fName = "Andrei";
         String lName = "Popescu";
         String phone = "724370346";
-        String email = "test_klekt...mail.com";
-        String pass = "adidasi45)";
+        String email = "test_klekt@mail.com";
+        String pass = "Adidasi45)";
 
         sleep(3000);
         LOG.info("Click 'Accept' cokies");
