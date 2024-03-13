@@ -20,8 +20,9 @@ public class AddToCartTest extends BaseTest {
         String oras = "Constanta";
         String provincie = "Constanta";
         String postal = "900098";
+        String fog="Fear of god 3d silicon";
 
-        sleep(3000);
+
         LOG.info("Click 'accept' cockies");
         addToCart.clickAcceptCokies();
 
@@ -31,12 +32,10 @@ public class AddToCartTest extends BaseTest {
         LOG.info("Click 'Log in ' tab");
         addToCart.clickLogIn();
 
-        sleep(3000);
 
         LOG.info("Move mouse");
         addToCart.moveEmailtxt();
 
-        sleep(3000);
 
         LOG.info("Input 'email and pass' field than Log");
         addToCart.inputEmail(email, password);
@@ -46,7 +45,6 @@ public class AddToCartTest extends BaseTest {
         LOG.info("Select product to add to cart");
         addToCart.selectProduct();
 
-        sleep(3000);
 
         LOG.info("Select 'AirJordan' brand");
         addToCart.selectAirJordaan();
@@ -69,10 +67,18 @@ public class AddToCartTest extends BaseTest {
         LOG.info("Remove accesories");
         addToCart.popUpAccesories(adresa, oras, provincie, postal);
 
-        sleep(5000);
 
         LOG.info("Select 'payment' method");
         addToCart.payMethod();
+
+        LOG.info("Go back to select other product");
+        addToCart.goBacktoProducts();
+
+        LOG.info("Select a streetware product");
+        addToCart.selctStreetW(fog);
+
+        LOG.info("Check if size 'L' is available");
+        Assert.assertTrue(addToCart.checkIfSizeL(), "Size L is not available");
 
 
 

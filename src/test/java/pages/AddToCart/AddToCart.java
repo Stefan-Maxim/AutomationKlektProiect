@@ -1,10 +1,12 @@
 package pages.AddToCart;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import pages.BasePage;
 
 public class AddToCart extends BasePage {
@@ -47,7 +49,13 @@ public class AddToCart extends BasePage {
     private By paymentMethod = By.xpath("//div[text()='Select']");
     private By chooseCard = By.xpath("//div[@aria-label='Paying with Card']");
     private By havePromoCode = By.xpath("//label[@for='promo-checkbox']");
-
+    private By goBack = By.xpath("//span[@class='faArrowLeft c-modal__close']");
+    private By clickX = By.xpath("//span[@class='faTimes c-modal__close']");
+    private By streetWare = By.xpath("//a[text()='STREETWEAR']");
+    private By clickSearch = By.xpath("//input[@placeholder='Type keyword here']");
+    private By fearOG = By.xpath("//div[text()='Fear Of God']");
+    private By fOGGri = By.xpath("//a[@aria-label='ESSENTIALS 3D Silicon Applique Crewneck Gray Flannel/Charcoal (SS20)']");
+    private By checkSizeL = By.xpath("//div[@class='c-price-point u-padding-vertical-small u-cursor u-flex u-flex--col u-flex--align-center u-relative pdp-price-point-wrapper']");
 
 
     public void clickAcceptCokies() {
@@ -122,8 +130,28 @@ public class AddToCart extends BasePage {
 
     public void payMethod() {
         LOG.info("Select 'Payment' method");
-        driver.findElement(chooseCard).click();
         driver.findElement(havePromoCode).click();
+        driver.findElement(chooseCard).click();
+    }
+
+    public void goBacktoProducts(){
+        LOG.info("Go back to select another product");
+        driver.findElement(goBack).click();
+        driver.findElement(clickX).click();
+    }
+
+    public void selctStreetW(String fog){
+        LOG.info("Select a streetware product");
+        driver.findElement(streetWare).click();
+        driver.findElement(clickSearch).click();
+        driver.findElement(clickSearch).sendKeys(fog);
+        driver.findElement(clickSearch).sendKeys(Keys.ENTER);
+        driver.findElement(fOGGri).click();
+    }
+
+    public boolean checkIfSizeL(){
+        LOG.info("Check is size 'L' is available");
+        return driver.findElement(checkSizeL).isDisplayed();
     }
 
 

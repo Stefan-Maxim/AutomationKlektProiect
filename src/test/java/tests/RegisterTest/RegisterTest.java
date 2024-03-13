@@ -2,6 +2,7 @@ package tests.RegisterTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 import static pages.BasePage.sleep;
@@ -35,6 +36,9 @@ public class RegisterTest extends BaseTest {
 
         LOG.info("Input 'First Name' field");
         registerPage.inputFirstLastName(fName,lName, phone, email, pass);
+
+        LOG.info("Check if 'email' error message is displayed");
+        Assert.assertTrue(registerPage.checkErrorMessage(),"Email error message is not displayed");
 
         sleep(5000);
 

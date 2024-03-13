@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class BasePage {
 
     private static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
@@ -14,6 +16,7 @@ public class BasePage {
         LOG.info("Start test");
         System.setProperty("webdriver.chrome.driver" , "C://WebDrivers/chromedriver121.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         String url = "https://www.klekt.com/";
         driver.get(url);
         LOG.info("Open browser maximize");

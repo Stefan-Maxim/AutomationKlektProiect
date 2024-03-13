@@ -32,6 +32,7 @@ public class RegisterPage extends BasePage {
     private By inputPass = By.xpath("//input[@name='password']");
     private By clickCheckBox = By.xpath("//label[@for='checkbox-label-1']");
     private By clickFinalSignUp = By.xpath("//button[text()='Sign Up']");
+    private By chekErrorMsg = By.xpath("//p[text()='The email address is not available.']");
 
 
     public void clickAcceptCokies() {
@@ -65,5 +66,10 @@ public class RegisterPage extends BasePage {
         driver.findElement(inputPass).sendKeys(pass);
         driver.findElement(clickCheckBox).click();
         driver.findElement(clickFinalSignUp).click();
+    }
+
+    public boolean checkErrorMessage(){
+        LOG.info("Check if the 'email' error message is displayed");
+        return driver.findElement(chekErrorMsg).isDisplayed();
     }
 }
