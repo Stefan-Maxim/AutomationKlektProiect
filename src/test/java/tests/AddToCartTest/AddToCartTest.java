@@ -80,6 +80,9 @@ public class AddToCartTest extends BaseTest {
         LOG.info("Check if size 'L' is available");
         Assert.assertTrue(addToCart.checkIfSizeL(), "Size L is not available");
 
+        LOG.info("Add item to favorites");
+        addToCart.addToFavorites();
+
 
 
 

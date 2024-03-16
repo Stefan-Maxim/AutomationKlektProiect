@@ -3,6 +3,7 @@ package tests.SignInTest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
@@ -38,6 +39,16 @@ public class SignInTest extends BaseTest {
 
         LOG.info("Input 'email and pass' field than Log");
         signInPage.inputEmail(email, password);
+
+        sleep(3000);
+
+        LOG.info("Check profile info");
+        signInPage.checkProfile();
+
+        LOG.info("Check if the name is displayed");
+        Assert.assertTrue(signInPage.checkNameOnProfile(),"Name is not displayed");
+
+        sleep(5000);
 
 
     }

@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 import pages.BasePage;
+import static pages.BasePage.sleep;
 
 public class AddToCart extends BasePage {
     public static final Logger LOG = LoggerFactory.getLogger(AddToCart.class);
@@ -56,6 +56,12 @@ public class AddToCart extends BasePage {
     private By fearOG = By.xpath("//div[text()='Fear Of God']");
     private By fOGGri = By.xpath("//a[@aria-label='ESSENTIALS 3D Silicon Applique Crewneck Gray Flannel/Charcoal (SS20)']");
     private By checkSizeL = By.xpath("//div[@class='c-price-point u-padding-vertical-small u-cursor u-flex u-flex--col u-flex--align-center u-relative pdp-price-point-wrapper']");
+    private By addToFav = By.xpath("//span[text()='Add to Wants']");
+    private By addToFSizeL = By.xpath("//span[text()='L'][1]");
+    private By clcikAddToF = By.xpath("//button[text()='Add To Want']");
+    private By clickFavs = By.xpath("//*[local-name()='svg' and @class='heart-icon-custom']");
+    private By removeFav = By.xpath("//div[@class='pod-want-flag u-cursor']");
+    private By goHome = By.id("top");
 
 
     public void clickAcceptCokies() {
@@ -152,6 +158,19 @@ public class AddToCart extends BasePage {
     public boolean checkIfSizeL(){
         LOG.info("Check is size 'L' is available");
         return driver.findElement(checkSizeL).isDisplayed();
+    }
+
+    public void addToFavorites(){
+        LOG.info("Add item to favorites");
+        driver.findElement(addToFav).click();
+        sleep(2000);
+        driver.findElement(addToFSizeL).click();
+        driver.findElement(clcikAddToF).click();
+        driver.findElement(clickFavs).click();
+        sleep(3000);
+        driver.findElement(removeFav).click();
+        driver.findElement(goHome).click();
+
     }
 
 

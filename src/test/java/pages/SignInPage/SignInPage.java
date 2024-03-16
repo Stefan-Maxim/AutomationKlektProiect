@@ -31,6 +31,8 @@ public class SignInPage extends BasePage {
     private By emailField = By.xpath("//input[@placeholder='Email...']");
     private By passField = By.xpath("//input[@type='password']");
     private By clickLogIn2 = By.xpath("//button[text()='Log In']");
+    private By profile = By.xpath("//div[text()='Your Profile']");
+    private By name = By.xpath("//input[@value='Andrei Popescu']");
 
 
 
@@ -61,6 +63,19 @@ public class SignInPage extends BasePage {
         driver.findElement(passField).sendKeys(password);
         driver.findElement(clickLogIn2).click();
     }
+
+    public void checkProfile(){
+        LOG.info("Check profile data");
+        driver.findElement(clkUserIcon).click();
+        driver.findElement(profile).click();
+    }
+
+    public boolean checkNameOnProfile(){
+        LOG.info("Check if the name is displayed");
+        return driver.findElement(name).isDisplayed();
+
+    }
+
 
 
 }
