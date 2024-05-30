@@ -35,7 +35,6 @@ public class SignInPage extends BasePage {
     private By name = By.xpath("//input[@value='Andrei Popescu']");
 
 
-
     public void clickAcceptCokies() {
         LOG.info("click accept cokies");
         driver.findElement(acceptCokies).click();
@@ -64,18 +63,17 @@ public class SignInPage extends BasePage {
         driver.findElement(clickLogIn2).click();
     }
 
-    public void checkProfile(){
+    public void checkProfile() {
         LOG.info("Check profile data");
         driver.findElement(clkUserIcon).click();
         driver.findElement(profile).click();
     }
 
-    public boolean checkNameOnProfile(){
+    public boolean checkNameOnProfile() {
         LOG.info("Check if the name is displayed");
         return driver.findElement(name).isDisplayed();
 
     }
-
 
 
 }

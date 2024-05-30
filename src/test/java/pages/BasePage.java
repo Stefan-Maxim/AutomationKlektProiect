@@ -14,7 +14,7 @@ public class BasePage {
 
     public static void setUp(){
         LOG.info("Start test");
-        System.setProperty("webdriver.chrome.driver" , "C://WebDrivers/chromedriver121.exe");
+        System.setProperty("webdriver.chrome.driver" , "C://WebDrivers/chromedriver125.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         String url = "https://www.klekt.com/";

@@ -4,13 +4,12 @@ import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
-import static pages.BasePage.sleep;
 
 public class SellItemPage extends BasePage {
     public static final Logger LOG = LoggerFactory.getLogger(SellItemPage.class);
     public static SellItemPage instance;
 
-    private SellItemPage(){
+    private SellItemPage() {
     }
 
     public static SellItemPage getInstance() {
@@ -28,7 +27,7 @@ public class SellItemPage extends BasePage {
     private By uS11 = By.xpath("//div[text()='US11']");
     private By inputPrice = By.xpath("//input[@placeholder='Enter your price']");
     private By selectPeriod = By.xpath("//div[@class='c-react-select__single-value']");
-    private By select1Month= By.xpath("//div[text()='1 month']");
+    private By select1Month = By.xpath("//div[text()='1 month']");
     private By clickPreview = By.xpath("//button[text()='Preview']");
     private By checkSize = By.xpath("//span[text()='US11']");
     private By checkQuantity = By.xpath("//p/span[text()='1']");
@@ -41,13 +40,12 @@ public class SellItemPage extends BasePage {
     private By homePage = By.id("top");
 
 
-
-    public void clickSellButton(){
+    public void clickSellButton() {
         LOG.info("Click 'SELL' button");
         driver.findElement(sellButton).click();
     }
 
-    public void sendSKU(String Sku){
+    public void sendSKU(String Sku) {
         LOG.info("Search 'Item' by sku");
         driver.findElement(searchSellBar).sendKeys(Sku);
         sleep(2000);
@@ -55,7 +53,7 @@ public class SellItemPage extends BasePage {
 
     }
 
-    public void submitItem(String price){
+    public void submitItem(String price) {
         LOG.info("Submit item for sale");
         driver.findElement(selectUsSize).click();
         sleep(2000);
@@ -68,17 +66,17 @@ public class SellItemPage extends BasePage {
         driver.findElement(clickPreview).click();
     }
 
-    public boolean checkSize(){
+    public boolean checkSize() {
         LOG.info("Check if size is displayed");
         return driver.findElement(checkSize).isDisplayed();
     }
 
-    public boolean checkQuantity(){
+    public boolean checkQuantity() {
         LOG.info("Check if quantity is dispalyed");
         return driver.findElement(checkQuantity).isDisplayed();
     }
 
-    public void finishSelling(String cityy, String regionn, String postcodee, String flatt){
+    public void finishSelling(String cityy, String regionn, String postcodee, String flatt) {
         LOG.info("Finish the selling process");
         driver.findElement(clcikNextStep).click();
         driver.findElement(enterAdresMan).click();
@@ -89,7 +87,7 @@ public class SellItemPage extends BasePage {
         sleep(4000);
     }
 
-    public void goToHomePage(){
+    public void goToHomePage() {
         LOG.info("Go back to home page");
         driver.findElement(homePage).click();
     }

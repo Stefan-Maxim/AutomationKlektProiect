@@ -46,7 +46,7 @@ public class SignInTest extends BaseTest {
         signInPage.checkProfile();
 
         LOG.info("Check if the name is displayed");
-        Assert.assertTrue(signInPage.checkNameOnProfile(),"Name is not displayed");
+        Assert.assertTrue(signInPage.checkNameOnProfile(), "Name is not displayed");
 
         sleep(5000);
 

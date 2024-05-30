@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
 import static pages.BasePage.sleep;
 
 public class SellItemPageTest extends BaseTest {
@@ -12,7 +13,7 @@ public class SellItemPageTest extends BaseTest {
 
     @Test
 
-    public void sellItem(){
+    public void sellItem() {
 
         String email = "test_klekt@mail.com";
         String password = "Adidasi45)";
@@ -53,13 +54,13 @@ public class SellItemPageTest extends BaseTest {
         sellItemPage.submitItem(price);
 
         LOG.info("Check if size is displayed");
-        Assert.assertTrue(sellItemPage.checkSize(),"Size is not displayed");
+        Assert.assertTrue(sellItemPage.checkSize(), "Size is not displayed");
 
         LOG.info("Check is quantity is displayed");
-        Assert.assertTrue(sellItemPage.checkQuantity(),"Quantity is not displayed");
+        Assert.assertTrue(sellItemPage.checkQuantity(), "Quantity is not displayed");
 
         LOG.info("Finish selling process");
-        sellItemPage.finishSelling(cityy,regionn,postcodee,flatt);
+        sellItemPage.finishSelling(cityy, regionn, postcodee, flatt);
 
         LOG.info("Go back to hone page");
         sellItemPage.goToHomePage();

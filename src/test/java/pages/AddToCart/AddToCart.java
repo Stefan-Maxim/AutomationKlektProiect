@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
-import static pages.BasePage.sleep;
 
 public class AddToCart extends BasePage {
     public static final Logger LOG = LoggerFactory.getLogger(AddToCart.class);
@@ -23,6 +22,7 @@ public class AddToCart extends BasePage {
         }
         return instance;
     }
+
     private By clickLogIn = By.xpath("//div[text()='Log In']");
     private By clkUserIcon = By.xpath("//*[local-name()='svg' and @class='user-icon-custom']");
     private By acceptCokies = By.id("rcc-confirm-button");
@@ -33,9 +33,9 @@ public class AddToCart extends BasePage {
     private By clickSneakers = By.xpath("//a[text()='SNEAKERS']");
     private By slectAirJordanBrand = By.xpath("//a[@class='c-accordion__title']/div[text()='Air Jordan']");
     private By selectJordan12 = By.xpath("//a[text()='Jordan 12']");
-    private By select12PlayOff= By.xpath("//a[@aria-label='12 Playoffs (2022)']");
+    private By select12PlayOff = By.xpath("//a[@aria-label='12 Playoffs (2022)']");
     private By selectSize11 = By.xpath("//label[@for='31']");
-    private By clickSize=By.xpath("//div[text()='Size']");
+    private By clickSize = By.xpath("//div[text()='Size']");
     private By clickSize11 = By.xpath("//span[text()='US11']");
     private By buyNow = By.xpath("//button[@class='c-btn u-materia-primary1-1000-fg  c-btn--naked u-flex u-flex--justify-center u-cursor c-btn--block pdp-buy-button u-margin-bottom-small u-subheader ']");
     private By removeAccesory = By.xpath("//p[@class='crep-quantity-minus u-margin-none ']");
@@ -54,7 +54,7 @@ public class AddToCart extends BasePage {
     private By streetWare = By.xpath("//a[text()='STREETWEAR']");
     private By clickSearch = By.xpath("//input[@placeholder='Type keyword here']");
     private By fearOG = By.xpath("//div[text()='Fear Of God']");
-    private By fOGGri = By.xpath("//a[@aria-label='ESSENTIALS 3D Silicon Applique Crewneck Gray Flannel/Charcoal (SS20)']");
+    private By fOGGri = By.xpath("//a[@aria-label='ESSENTIALS 3D Silicon Applique Pullover Hoodie White (SS20)']");
     private By checkSizeL = By.xpath("//div[@class='c-price-point u-padding-vertical-small u-cursor u-flex u-flex--col u-flex--align-center u-relative pdp-price-point-wrapper']");
     private By addToFav = By.xpath("//span[text()='Add to Wants']");
     private By addToFSizeL = By.xpath("//span[text()='L'][1]");
@@ -92,36 +92,36 @@ public class AddToCart extends BasePage {
         driver.findElement(clickLogIn2).click();
     }
 
-    public void selectProduct(){
+    public void selectProduct() {
         LOG.info("click 'SNEAKERS' tab");
         driver.findElement(clickSneakers).click();
     }
 
-    public void selectAirJordaan(){
+    public void selectAirJordaan() {
         LOG.info("Select AirJordan brand");
         driver.findElement(slectAirJordanBrand).click();
         driver.findElement(selectJordan12).click();
     }
 
-    public void selectPlayOff(){
+    public void selectPlayOff() {
         LOG.info("Select 'PlayOff' model, size 11");
         driver.findElement(clickSize).click();
         driver.findElement(selectSize11).click();
         driver.findElement(select12PlayOff).click();
     }
 
-    public boolean checkSize11(){
+    public boolean checkSize11() {
         LOG.info("Check if size 11 is available");
         return driver.findElement(clickSize11).isDisplayed();
     }
 
-    public void addToCartJ12(){
+    public void addToCartJ12() {
         LOG.info("add 'J12' size 11us to cart");
         driver.findElement(clickSize11).click();
         driver.findElement(buyNow).click();
     }
 
-    public void popUpAccesories(String adresa, String oras, String provincie, String postal){
+    public void popUpAccesories(String adresa, String oras, String provincie, String postal) {
         LOG.info("Remove accesosries");
         driver.findElement(removeAccesory).click();
 //        driver.findElement(shippingDetails).click();
@@ -140,13 +140,13 @@ public class AddToCart extends BasePage {
         driver.findElement(chooseCard).click();
     }
 
-    public void goBacktoProducts(){
+    public void goBacktoProducts() {
         LOG.info("Go back to select another product");
         driver.findElement(goBack).click();
         driver.findElement(clickX).click();
     }
 
-    public void selctStreetW(String fog){
+    public void selctStreetW(String fog) {
         LOG.info("Select a streetware product");
         driver.findElement(streetWare).click();
         driver.findElement(clickSearch).click();
@@ -155,12 +155,12 @@ public class AddToCart extends BasePage {
         driver.findElement(fOGGri).click();
     }
 
-    public boolean checkIfSizeL(){
+    public boolean checkIfSizeL() {
         LOG.info("Check is size 'L' is available");
         return driver.findElement(checkSizeL).isDisplayed();
     }
 
-    public void addToFavorites(){
+    public void addToFavorites() {
         LOG.info("Add item to favorites");
         driver.findElement(addToFav).click();
         sleep(2000);
@@ -172,8 +172,6 @@ public class AddToCart extends BasePage {
         driver.findElement(goHome).click();
 
     }
-
-
 
 
 }

@@ -5,13 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tests.BaseTest;
+
 import static pages.BasePage.sleep;
 
 public class RegisterTest extends BaseTest {
     public static final Logger LOG = LoggerFactory.getLogger(RegisterTest.class);
 
     @Test
-    public void registerFill(){
+    public void registerFill() {
 
         String fName = "Andrei";
         String lName = "Popescu";
@@ -35,13 +36,12 @@ public class RegisterTest extends BaseTest {
         registerPage.moveOnFNametxt();
 
         LOG.info("Input 'First Name' field");
-        registerPage.inputFirstLastName(fName,lName, phone, email, pass);
+        registerPage.inputFirstLastName(fName, lName, phone, email, pass);
 
         LOG.info("Check if 'email' error message is displayed");
-        Assert.assertTrue(registerPage.checkErrorMessage(),"Email error message is not displayed");
+        Assert.assertTrue(registerPage.checkErrorMessage(), "Email error message is not displayed");
 
         sleep(5000);
-
 
 
     }
